@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@font-face {
+  font-family: 'capitolcity';
+  src: url('/fonts/capitolcityexpand.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pointless';
+  src: url('/fonts/Pointless.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.capitol-font {
+    font-family: 'capitolcity', sans-serif;
+}
+
+.pointless-font {
+    font-family: 'pointless', sans-serif;
+}
