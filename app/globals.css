@@ -52,6 +52,6 @@ body {
     font-family: 'pointless', sans-serif;
 }
 
-nav div:not(:first-child):hover{
+nav div:not(:first-child) a:hover{
     color: grey;
 }

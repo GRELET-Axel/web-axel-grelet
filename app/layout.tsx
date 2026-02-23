@@ -17,9 +17,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <div className="hidden md:flex gap-x-5 mr-20 text-xl">
             <a className="capitol-font" href="/">HOME</a>
-            <a className="capitol-font" href="#">PROJECTS</a>
-            <a className="capitol-font" href="#">TECHNOLOGIES</a>
-            <a className="capitol-font" href="#">CONTACT</a>
+            <a className="capitol-font" href="#projects">PROJECTS</a>
+            <a className="capitol-font" href="#technologies">TECHNOLOGIES</a>
+            <a className="capitol-font" href="#contact">CONTACT</a>
           </div>
         </nav>
           {/* <hr className="mt-10 ml-10 mr-10"/> */}
