@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Technologies from "./components/Technologies";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Background3D from "./components/Background3D";
 
 
@@ -13,6 +14,7 @@ export default function Page() {
       <Projects />
       <Technologies />
       <Contact />
+      <Footer />
     </main>
 
   );

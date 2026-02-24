@@ -55,3 +55,7 @@ body {
 nav div:not(:first-child) a:hover{
     color: grey;
 }
+
+#footer div a:hover{
+  color:grey;
+}

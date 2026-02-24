@@ -376,8 +376,9 @@ export default function Technologies() {
 
       {/* Category filters */}
       <div style={{
-        position: "absolute",
-        bottom: "40px",
+        position: "relative",
+        // bottom: "40px",
+        marginBottom: "0",
         left: "50%",
         transform: "translateX(-50%)",
         display: "flex",
