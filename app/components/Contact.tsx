@@ -108,7 +108,7 @@ export default function Contact() {
       `}</style>
 
         <div className="m-auto capitol-font">
-            <h1 className="text-2xl">
+            <h1 className="text-2xl mb-10">
                 Contact
             </h1>
         </div>
@@ -123,12 +123,12 @@ export default function Contact() {
             fontWeight: 900,
             color: "#00ff88",
             letterSpacing: "-2px",
-            marginBottom: "16px",
+            marginBottom: "16px"
           }}>
-            Message envoyé.
+            Message sent.
           </div>
-          <div style={{ fontSize: "11px", letterSpacing: "4px", color: "#444" }}>
-            Je vous répondrai dans les plus brefs délais.
+          <div style={{ fontSize: "11px", letterSpacing: "4px", color: "grey" }}>
+            I will give you an answer soon !
           </div>
         </div>
       ) : (
@@ -140,7 +140,7 @@ export default function Contact() {
               display: "block",
               fontSize: "9px",
               letterSpacing: "4px",
-              color: focused === "name" ? "#e8ff00" : "#444",
+              color: focused === "name" ? "#e8ff00" : "grey",
               textTransform: "uppercase",
               marginBottom: "4px",
               transition: "color 0.3s ease",
@@ -165,7 +165,7 @@ export default function Contact() {
               display: "block",
               fontSize: "9px",
               letterSpacing: "4px",
-              color: focused === "email" ? "#e8ff00" : "#444",
+              color: focused === "email" ? "#e8ff00" : "grey",
               textTransform: "uppercase",
               marginBottom: "4px",
               transition: "color 0.3s ease",
@@ -190,7 +190,7 @@ export default function Contact() {
               <label style={{
                 fontSize: "9px",
                 letterSpacing: "4px",
-                color: focused === "message" ? "#e8ff00" : "#444",
+                color: focused === "message" ? "#e8ff00" : "grey",
                 textTransform: "uppercase",
                 transition: "color 0.3s ease",
               }}>
@@ -247,15 +247,15 @@ export default function Contact() {
             flexWrap: "wrap",
             gap: "16px",
           }}>
-            <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#2a2a2a" }}>
+            <div style={{ fontSize: "10px", letterSpacing: "3px", color: "white" }}>
               Feel free to contact me
             </div>
             <a href="mailto:grelet.axel.85@gmail.com" style={{
               fontSize: "12px",
               letterSpacing: "2px",
-              color: "#555",
+              color: "white",
               textDecoration: "none",
-              borderBottom: "1px solid #222",
+              borderBottom: "1px solid grey",
               paddingBottom: "2px",
               transition: "color 0.2s, border-color 0.2s",
             }}
@@ -264,11 +264,11 @@ export default function Contact() {
                 (e.currentTarget as HTMLAnchorElement).style.borderColor = "#e8ff00";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "#555";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "#222";
+                (e.currentTarget as HTMLAnchorElement).style.color = "white";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "grey";
               }}
             >
-              votre@email.com
+              grelet.axel.85@gmail.com
             </a>
           </div>
         </div>

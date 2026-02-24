@@ -117,7 +117,9 @@ export default function Technologies() {
   const nodesRef = useRef<Node[]>([]);
   const animRef = useRef<number>(0);
   const mouseRef = useRef({ x: -999, y: -999 });
-  const [hoveredNode, setHoveredNode] = useState<Node | null>(null);
+//   const [hoveredNode, setHoveredNode] = useState<Node | null>(null);
+  const hoveredNodeRef = useRef<Node | null>(null);
+  const [hoveredName, setHoveredName] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const imagesRef = useRef<Record<string, HTMLImageElement>>({});
 
@@ -136,9 +138,11 @@ export default function Technologies() {
     if (!canvas || !container) return;
 
     const resize = () => {
-      canvas.width = container.clientWidth;
-      canvas.height = container.clientHeight;
-      nodesRef.current = buildNodes(canvas.width, canvas.height);
+    const parent = canvas.parentElement;
+    if (!parent) return;
+        canvas.width = parent.clientWidth;
+        canvas.height = parent.clientHeight;
+        nodesRef.current = buildNodes(canvas.width, canvas.height);
     };
     resize();
     window.addEventListener("resize", resize);
@@ -160,19 +164,19 @@ export default function Technologies() {
       nodes.forEach(node => {
         if (node.isHub) return;
         // gentle drift back to base
-        node.vx += (node.baseX - node.x) * 0.004;
-        node.vy += (node.baseY - node.y) * 0.004;
+        node.vx += (node.baseX - node.x) * 0.008;
+        node.vy += (node.baseY - node.y) * 0.008;
         // mouse repulsion
         const dx = node.x - mouse.x;
         const dy = node.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120 && dist > 0) {
-          const force = (120 - dist) / 120;
-          node.vx += (dx / dist) * force * 2;
-          node.vy += (dy / dist) * force * 2;
+        if (dist < 80 && dist > 0) {
+          const force = (80 - dist) / 80;
+          node.vx += (dx / dist) * force * 1.2;
+          node.vy += (dy / dist) * force * 1.2;
         }
-        node.vx *= 0.92;
-        node.vy *= 0.92;
+        node.vx *= 0.85;
+        node.vy *= 0.85;
         node.x += node.vx;
         node.y += node.vy;
       });
@@ -244,7 +248,8 @@ export default function Technologies() {
       nodes.filter(n => !n.isHub).forEach(node => {
         const color = CATEGORY_COLORS[node.logo.category];
         const isActive = !activeCategory || activeCategory === node.logo.category;
-        const isHovered = hoveredNode?.id === node.id;
+        // const isHovered = hoveredNode?.id === node.id;
+        const isHovered = hoveredNodeRef.current?.id === node.id;
         const alpha = isActive ? 1 : 0.15;
         const r = isHovered ? 28 : 22;
 
@@ -304,9 +309,11 @@ export default function Technologies() {
         if (n.isHub) return false;
         const dx = n.x - mx;
         const dy = n.y - my;
-        return Math.sqrt(dx * dx + dy * dy) < 26;
+        return Math.sqrt(dx * dx + dy * dy) < 36;
       });
-      setHoveredNode(found ?? null);
+    //   setHoveredNode(found ?? null);
+      hoveredNodeRef.current = found ?? null;
+      setHoveredName(found?.logo.name ?? null);
       canvas.style.cursor = found ? "pointer" : "default";
     };
 
@@ -317,7 +324,8 @@ export default function Technologies() {
       window.removeEventListener("resize", resize);
       canvas.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [hoveredNode, activeCategory]);
+//   }, [hoveredNode, activeCategory]);
+  }, [ activeCategory]);
 
   return (
     <section ref={containerRef} style={{
@@ -326,6 +334,8 @@ export default function Technologies() {
       height: "100vh",
       background: "#080808",
       overflow: "hidden",
+      display: "flex", 
+      flexDirection: "column",
     }}>
     <div className="w-1/2 text-center m-auto capitol-font">
             <h1 className="text-2xl">
@@ -357,6 +367,7 @@ export default function Technologies() {
         textAlign: "center",
         zIndex: 5,
         pointerEvents: "none",
+        flexShrink: 0, 
       }}>
       </div>
 
@@ -374,6 +385,7 @@ export default function Technologies() {
         flexWrap: "wrap",
         justifyContent: "center",
         zIndex: 5,
+        flexShrink: 0, 
       }}>
         {Object.entries(CATEGORY_COLORS).map(([cat, color]) => (
           <button

@@ -3,7 +3,7 @@ export default function Header() {
     <section id="header" className="mt-20">
         <div className="w-1/2 text-justify m-auto capitol-font">
             <h1 className="text-2xl">
-                Hey, my name is Axel.
+                Hey, i'm Axel !
             </h1>
             <h2 className="text-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit gravida nisl. Ut metus augue,
