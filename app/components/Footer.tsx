@@ -9,6 +9,8 @@ export default function Footer(){
                 <div className="mr-10">
                     <p><a target="_blank" href="https://github.com/GRELET-Axel">Github</a></p>
                     <p><a target="_blank" href="https://www.linkedin.com/in/axel-grelet-513aa717b/">Linkedin</a></p>
+                    <p><a target="_blank" href="https://www.root-me.org/Slim-816954">RootMe</a></p>
+                    
                 </div>
             </div>
         </section>
