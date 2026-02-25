@@ -337,7 +337,7 @@ export default function Technologies() {
       display: "flex", 
       flexDirection: "column",
     }}>
-    <div className="w-1/2 text-center m-auto capitol-font">
+    <div id="technologies" className="w-1/2 text-center m-auto capitol-font">
             <h1 className="text-2xl">
                 Technologies
             </h1>

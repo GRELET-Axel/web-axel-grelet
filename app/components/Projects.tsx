@@ -11,11 +11,12 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { id: 1, title: "Développeur", subtitle: "Full Stack", color: "#0f0f0f", accent: "#e8ff00" },
-  { id: 2, title: "Designer", subtitle: "UI / UX", color: "#1a0a2e", accent: "#bf5fff" },
-  { id: 3, title: "Créateur", subtitle: "3D & Motion", color: "#0a1a0f", accent: "#00ff88" },
-  { id: 4, title: "Architecte", subtitle: "Systèmes", color: "#1a0a0a", accent: "#ff4d4d" },
-  { id: 5, title: "Stratège", subtitle: "Produit", color: "#0a0f1a", accent: "#4d9fff" },
+  { id: 1, title: "I have hands-on experience building and integrating secure REST APIs using PHP (Symfony, API Platform). I developed APIs for both front-office and back-office applications, ensuring scalability, maintainability, and compliance with security best practices.", subtitle: "API Development", color: "#0f0f0f", accent: "#e8ff00" },
+  { id: 2, title: "I worked with multiple relational database systems such as MySQL, PostgreSQL, MariaDB, and SQL Server. My experience includes designing schemas, optimizing queries, and managing secure database environments for enterprise applications.", subtitle: "Databases", color: "#1a0a2e", accent: "#bf5fff" },
+  { id: 3, title: "With strong DevOps skills, I deployed and managed containerized applications using Docker and Proxmox clusters. I also automated backup processes and implemented CI/CD pipelines with GitLab, ensuring reliable and secure deployments.", subtitle: "Infrastructure", color: "#0a1a0f", accent: "#00ff88" },
+  { id: 4, title: "I have developed full-stack web applications using frameworks such as Symfony, Laravel, Angular, and JavaScript/TypeScript. My work included the redesign of secure web applications, implementing responsive UIs, and optimizing user experience.", subtitle: "Web Development", color: "#1a0a0a", accent: "#ff4d4d" },
+  { id: 5, title: "I conducted internal web penetration tests, application security audits, and risk analyses based on the EBIOS RM method (aligned with ISO 27005). I also gained expertise during my formation in forensic analysis ,security monitoring and SOC analyse with tools like Elastic Stack, Wireshark, and Metasploit.", subtitle: "Cybersecurity", color: "#0a0f1a", accent: "#4d9fff" },
+  { id: 6, title: "Beyond web, I explored broader software development using Java, Spring Boot, Kotlin, and Flutter. This versatility allows me to adapt to different ecosystems and deliver reliable applications, from mobile apps to enterprise solutions.", subtitle: "Software Development", color: "#000000", accent: "#D3D3D3" },
 ];
 
 function getPosition(index: number, current: number, total: number) {
@@ -169,7 +170,7 @@ export default function Projects() {
                       {slide.subtitle}
                     </div>
                     <div style={{
-                      fontSize: "52px",
+                      fontSize: "18px",
                       fontWeight: "900",
                       color: "#fff",
                       lineHeight: 1,
@@ -181,7 +182,7 @@ export default function Projects() {
 
                   {/* Bottom number */}
                   <div style={{
-                    fontSize: "120px",
+                    fontSize: "60px",
                     fontWeight: "900",
                     color: slide.accent + "15",
                     lineHeight: 1,
