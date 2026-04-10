@@ -1,7 +1,7 @@
 export default function Footer(){
 
     return(
-        <section id="footer">
+        <section id="footer" style={{background: "#0a0a0a"}}>
             <hr/>
             <div className="flex text-xs mt-4 mb-4 justify-between items-center capitol-font">
                 <p>© 2026</p>

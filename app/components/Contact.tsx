@@ -17,12 +17,30 @@ export default function Contact() {
     if (name === "message") setCharCount(value.length);
   };
 
+  // const handleSubmit = async () => {
+  //   if (!form.name || !form.email || !form.message) return;
+  //   setStatus("sending");
+  //   // Simule un envoi — remplace par ton vrai appel API
+  //   await new Promise(res => setTimeout(res, 1800));
+  //   setStatus("sent");
+  // };
+
   const handleSubmit = async () => {
     if (!form.name || !form.email || !form.message) return;
     setStatus("sending");
-    // Simule un envoi — remplace par ton vrai appel API
-    await new Promise(res => setTimeout(res, 1800));
-    setStatus("sent");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputBase: React.CSSProperties = {
@@ -54,7 +72,7 @@ export default function Contact() {
     <section id="contact" style={{
       width: "100%",
       minHeight: "100vh",
-      background: "#080808",
+      background: "#0a0a0a",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -114,7 +132,7 @@ export default function Contact() {
         </div>
       {/* Form */}
       {status === "sent" ? (
-        <div style={{
+        <div className="roboto-font" style={{
           textAlign: "center",
           animation: "slideUp 0.5s ease both",
         }}>
@@ -138,9 +156,9 @@ export default function Contact() {
           <div className="field-wrap" style={{ marginBottom: "40px", animationDelay: "0.05s" }}>
             <label style={{
               display: "block",
-              fontSize: "9px",
-              letterSpacing: "4px",
-              color: focused === "name" ? "#e8ff00" : "grey",
+              fontSize: "14px",
+              letterSpacing: "7px",
+              color: focused === "name" ? "#e8ff00" : "white",
               textTransform: "uppercase",
               marginBottom: "4px",
               transition: "color 0.3s ease",
@@ -163,9 +181,9 @@ export default function Contact() {
           <div className="field-wrap" style={{ marginBottom: "40px", animationDelay: "0.1s" }}>
             <label style={{
               display: "block",
-              fontSize: "9px",
-              letterSpacing: "4px",
-              color: focused === "email" ? "#e8ff00" : "grey",
+              fontSize: "14px",
+              letterSpacing: "7px",
+              color: focused === "email" ? "#e8ff00" : "white",
               textTransform: "uppercase",
               marginBottom: "4px",
               transition: "color 0.3s ease",
@@ -188,9 +206,9 @@ export default function Contact() {
           <div className="field-wrap" style={{ marginBottom: "56px", animationDelay: "0.15s" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "4px" }}>
               <label style={{
-                fontSize: "9px",
-                letterSpacing: "4px",
-                color: focused === "message" ? "#e8ff00" : "grey",
+                fontSize: "14px",
+                letterSpacing: "7px",
+                color: focused === "message" ? "#e8ff00" : "white",
                 textTransform: "uppercase",
                 transition: "color 0.3s ease",
               }}>

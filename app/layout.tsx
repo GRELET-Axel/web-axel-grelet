@@ -22,7 +22,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <a className="capitol-font" href="#contact">CONTACT</a>
           </div>
         </nav>
-          {/* <hr className="mt-10 ml-10 mr-10"/> */}
         {children}
       </body>
     </html>

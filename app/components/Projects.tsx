@@ -83,8 +83,8 @@ export default function Projects() {
   };
   return (
     <section id="projects" className="mt-20">
-        <div className="w-1/2 text-center m-auto capitol-font">
-            <h1 className="md:text-2xl">
+        <div className="w-1/2 text-center m-auto">
+            <h1 className="md:text-2xl capitol-font">
                 PROJECTS
             </h1>
             {/* carousel */}
@@ -96,8 +96,9 @@ export default function Projects() {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      background: "#080808",
-      fontFamily: "'Courier New', monospace",
+      // background: "#080808",
+      background: "#0a0a0a",
+      // fontFamily: "'Courier New', monospace",
       userSelect: "none",
       overflow: "hidden",
     }}>
@@ -112,7 +113,7 @@ export default function Projects() {
       }} />
 
       {/* Label */}
-      <div style={{
+      <div className="roboto-font" style={{
         position: "absolute",
         top: "48px",
         fontSize: "11px",
@@ -141,6 +142,7 @@ export default function Projects() {
             const pos = getPosition(i, current, slides.length);
             return (
               <div
+                className="roboto-font"
                 key={slide.id}
                 style={getCardStyle(pos, slide)}
                 onClick={() => {
@@ -161,7 +163,7 @@ export default function Projects() {
                   {/* Content */}
                   <div>
                     <div style={{
-                      fontSize: "11px",
+                      fontSize: "20px",
                       letterSpacing: "4px",
                       color: slide.accent,
                       textTransform: "uppercase",
@@ -174,13 +176,13 @@ export default function Projects() {
                       fontWeight: "900",
                       color: "#fff",
                       lineHeight: 1,
-                      letterSpacing: "-2px",
+                      // letterSpacing: "-2px",
                     }}>
                       {slide.title}
                     </div>
                   </div>
 
-                  {/* Bottom number */}
+                  {/* Bottom number
                   <div style={{
                     fontSize: "60px",
                     fontWeight: "900",
@@ -189,7 +191,7 @@ export default function Projects() {
                     marginBottom: "-20px",
                   }}>
                     {String(slide.id).padStart(2, "0")}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             );
