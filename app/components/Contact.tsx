@@ -69,7 +69,7 @@ export default function Contact() {
     //         </h1>
     //     </div>
     // </section>
-    <section id="contact" style={{
+    <section id="contact" className="roboto-font" style={{
       width: "100%",
       minHeight: "100vh",
       background: "#0a0a0a",
@@ -78,11 +78,10 @@ export default function Contact() {
       alignItems: "center",
       justifyContent: "center",
       padding: "80px 24px",
-      boxSizing: "border-box",
-      fontFamily: "'Courier New', monospace",
+      boxSizing: "border-box"
     }}>
       <style>{`
-        ::placeholder { color: #333; font-family: 'Courier New', monospace; letter-spacing: 2px; font-size: 11px; }
+        ::placeholder { color: #333; letter-spacing: 2px; font-size: 11px; }
         textarea { resize: none; }
 
         .submit-btn {
@@ -91,7 +90,6 @@ export default function Contact() {
           background: transparent;
           border: 1px solid #e8ff00;
           color: #e8ff00;
-          font-family: 'Courier New', monospace;
           font-size: 11px;
           letter-spacing: 5px;
           text-transform: uppercase;
@@ -132,7 +130,7 @@ export default function Contact() {
         </div>
       {/* Form */}
       {status === "sent" ? (
-        <div className="roboto-font" style={{
+        <div style={{
           textAlign: "center",
           animation: "slideUp 0.5s ease both",
         }}>
@@ -255,7 +253,7 @@ export default function Contact() {
           </div>
 
           {/* Divider */}
-          <div style={{
+          <div className="capitol-font" style={{
             marginTop: "72px",
             paddingTop: "40px",
             borderTop: "1px solid #161616",
@@ -265,11 +263,11 @@ export default function Contact() {
             flexWrap: "wrap",
             gap: "16px",
           }}>
-            <div style={{ fontSize: "10px", letterSpacing: "3px", color: "white" }}>
+            <div style={{ fontSize: "15px", letterSpacing: "3px", color: "white" }}>
               Feel free to contact me
             </div>
             <a href="mailto:grelet.axel.85@gmail.com" style={{
-              fontSize: "12px",
+              fontSize: "15px",
               letterSpacing: "2px",
               color: "white",
               textDecoration: "none",

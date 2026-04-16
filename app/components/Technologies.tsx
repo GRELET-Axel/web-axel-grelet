@@ -238,7 +238,7 @@ export default function Technologies() {
 
         // label
         ctx.fillStyle = color + Math.round(alpha * 255).toString(16).padStart(2, "0");
-        ctx.font = "10px 'Courier New'";
+        ctx.font = "10px";
         ctx.letterSpacing = "3px";
         ctx.textAlign = "center";
         ctx.fillText(hub.logo.name.toUpperCase(), hub.x, hub.y + 36);
@@ -285,7 +285,7 @@ export default function Technologies() {
         // name tooltip on hover
         if (isHovered) {
           ctx.fillStyle = "#fff";
-          ctx.font = "bold 12px 'Courier New'";
+          ctx.font = "bold 12px";
           ctx.letterSpacing = "2px";
           ctx.textAlign = "center";
           ctx.fillText(node.logo.name, node.x, node.y - r - 10);
@@ -344,7 +344,6 @@ export default function Technologies() {
     </div>
       <style>{`
         .cat-btn {
-          font-family: 'Courier New', monospace;
           font-size: 10px;
           letter-spacing: 3px;
           text-transform: uppercase;

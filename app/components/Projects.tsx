@@ -173,7 +173,7 @@ export default function Projects() {
                     </div>
                     <div style={{
                       fontSize: "18px",
-                      fontWeight: "900",
+                      // fontWeight: "900",
                       color: "#fff",
                       lineHeight: 1,
                       // letterSpacing: "-2px",
