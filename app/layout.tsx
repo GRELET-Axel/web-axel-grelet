@@ -5,7 +5,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html>
       <body>
         <nav className="flex justify-between items-center align-middle mt-10">
-          <div className="ml-10 md:text-3xl sm:text-sm">
+          <div className="flex items-center ml-10 md:text-3xl sm:text-sm">
+            <img 
+              src="/logos/logo_axel.png" 
+              alt="logo"
+              className="w-8 h-8 md:w-30 md:h-30 object-contain"
+            />
             <a className="pointless-font" href="/">AXEL GRELET</a>
           </div>
           <div className="md:hidden mr-10">
