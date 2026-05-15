@@ -198,19 +198,19 @@ export default function Technologies() {
         ctx.stroke();
       });
 
-      // Draw hub-to-hub faint lines
-      const hubNodes = nodes.filter(n => n.isHub);
-      hubNodes.forEach((a, i) => {
-        hubNodes.forEach((b, j) => {
-          if (j <= i) return;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = "rgba(255,255,255,0.03)";
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        });
-      });
+      // // Draw hub-to-hub faint lines
+      // const hubNodes = nodes.filter(n => n.isHub);
+      // hubNodes.forEach((a, i) => {
+      //   hubNodes.forEach((b, j) => {
+      //     if (j <= i) return;
+      //     ctx.beginPath();
+      //     ctx.moveTo(a.x, a.y);
+      //     ctx.lineTo(b.x, b.y);
+      //     ctx.strokeStyle = "rgba(255,255,255,0.03)";
+      //     ctx.lineWidth = 1;
+      //     ctx.stroke();
+      //   });
+      // });
 
       // Draw hub nodes
       nodes.filter(n => n.isHub).forEach(hub => {
